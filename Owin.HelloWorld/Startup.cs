@@ -8,7 +8,7 @@ namespace Owin.HelloWorld
         public static void Configuration(IAppBuilder builder)
         {
             builder
-                .RunDirect((req, res) =>
+                .Get((req, res) =>
                 {
                     res.ContentType = "text/plain";
                     res.Write("Hello World!\r\n")
