@@ -1,7 +1,7 @@
 ﻿using System;
 using Gate;
 using Owin;
-namespace Owin.HelloWorld
+namespace Owin.HelloWorld.Routing
 {
     public static class Middleware
     {
