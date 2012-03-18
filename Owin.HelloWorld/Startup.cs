@@ -19,14 +19,22 @@ namespace Owin.HelloWorld
                     res.ContentType = "text/plain";
                     res.End("Email " + req.UrlSegments.email + " is subscribed.\r\n");
                 })
-                .Delete(@"/users/(?<id>\d{1,5})/unsubscribe/:email", (req, res) => {
+                .Delete(@"/users/(?<id>\d{1,5})/unsubscribe/:email", (req, res) =>
+                {
                     res.ContentType = "text/plain";
                     res.End("Email " + req.UrlSegments.email + " has been unsubscribed.\r\n");
                 })
+                .Get("/json", (req, res) =>
+                {
+                    res.Json(new { FirstName = "Aaron", LastName = "Powell" });
+                })
+                .Get("/json/:name", (req, res) =>
+                {
+                    res.Json(new { Name = req.UrlSegments.name });
+                })
                 .Get((req, res) =>
                 {
-                    res.ContentType = "text/plain";
-                    res.End("Well nothing else matched, that's sad :(\r\n");
+                    res.Text("Well nothing else matched, that's sad :(\r\n");
                 })
                 ;
         }
