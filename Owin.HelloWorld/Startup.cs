@@ -32,6 +32,14 @@ namespace Owin.HelloWorld
                 {
                     res.Json(new { Name = req.UrlSegments.name });
                 })
+                .Get("/razor/basic", (req, res) =>
+                {
+                    res.View("Basic");
+                })
+                .Get("/razor/model/:name", (req, res) =>
+                {
+                    res.View("Model", new { Name = req.UrlSegments.name });
+                })
                 .Get((req, res) =>
                 {
                     res.Text("Well nothing else matched, that's sad :(\r\n");
