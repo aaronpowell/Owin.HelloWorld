@@ -93,7 +93,10 @@
     <Compile Include="Routing\RouteBuilder.cs" />
     <Compile Include="Routing\RoutedRequest.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewEngine.cs" />
+    <Compile Include="ViewEngine\ViewEngineActivator.cs" />
+    <Compile Include="ViewEngine\ViewEngineExtensions.cs" />
+    <Compile Include="ViewEngine\IViewEngine.cs" />
+    <Compile Include="ViewEngine\RazorViewEngine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -1,5 +1,6 @@
 ﻿using Owin;
 using Owin.HelloWorld.Routing;
+using Owin.HelloWorld.ViewEngine;
 using Gate;
 
 namespace Owin.HelloWorld
@@ -9,6 +10,7 @@ namespace Owin.HelloWorld
         public static void Configuration(IAppBuilder builder)
         {
             builder
+                .UseViewEngine<RazorViewEngine>()
                 .Get("/hi", (req, res) =>
                 {
                     res.ContentType = "text/plain";
