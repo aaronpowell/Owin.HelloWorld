@@ -10,7 +10,7 @@ namespace Owin.HelloWorld
         public static void Configuration(IAppBuilder builder)
         {
             builder
-                .UseViewEngine<RazorViewEngine>()
+                .DefaultViewEngine<RazorViewEngine>()
                 .Get("/hi", (req, res) =>
                 {
                     res.ContentType = "text/plain";
